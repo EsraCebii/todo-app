@@ -2,14 +2,14 @@ import React from "react";
 import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.css";
 
-function TodoList(props) {
+function TodoList({todos, deleteItem}) {
   return (
     <div>
       <ul>
-        {props.todos.map((todo) => {
+        {todos.map((todo) => {
           return (
-            <li className="list-group-item">
-              <TodoItem {...todo} key={todo.id} />
+            <li key={todo.id}className="list-group-item">
+              <TodoItem {...todo}  deleteItem={deleteItem}/>
             </li>
           );
         })}
